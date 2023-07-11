@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  [class*="col-"] {
+    float: left;
+  }
+  
+  html {
+    font-family: "Lucida Sans", sans-serif;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+  }
+  .logo{
+    width: 100%;
+    background-color: #9933cc;
+    color: #ffffff;
+    padding: 2em;
+  }
+
+  #centro a{
+    color:#97004B;
+    text-decoration:none; /*Remove o underline do Link a*/
+  }
+
+  .topnav {
+    background-color: #9933cc;
+    color: #ffffff;
+    padding: 2em;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+	}
+
+	/* Coloca os itens da lista do Menu lado a lado, e flutua os itens para a esquerda */
+	ul.topnav li {
+    display: flex;
+    align-self: center;
+		list-style: none;
+		margin-left: 0.5em;
+		font-size: 0.9em;
+	}
+
+	/* Estilo dos links dentro da lista */
+	ul.topnav li a {
+		color: #fff;
+		text-decoration: none;
+	}
+
+	/* Altera a cor do link quando passa o mouse em cima*/
+	ul.topnav li a:hover {color:#FFB9DC;}
+
+	/* Esconde os itens da lista quando a resolução da tela for pequena */
+	ul.topnav li.icon {display: none;}
+	
+  .menu ul {
+    list-style-type: none;
+    margin: 0.5em;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 1em;
+    border-radius: 0.5em;
+    margin-bottom: 7px;
+    margin: 1em;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    box-shadow: var(--sombra-padrao);
+  }
+  
+  .menu li:hover {
+    background-color: var(--cor-secundaria-houver);
+  }
+  
+  .aside {
+    background-color: var(--cor-secundaria);
+    margin: 1em 2em;
+    border-radius: 2em;
+    padding: 2em;
+    color: var(--cor-branca);
+    text-align: center;
+    font-size: 14px;
+    box-shadow: var(--sombra-padrao);
+  }
+  
+  .footer {
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    text-align: center;
+    font-size: 12px;
+    padding: 2em;
+    bottom: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .main{
+    margin: 1em 2em;
+    text-align: justify;
+  }
+  
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+    
+  }
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    
+  }
+
+  /* Quando a tela é menor do que 680 pixels de largura, ocultar todos os itens da lista. Mostra o item da lista que contém o link para abrir e fechar a nav superior (li.icon) */
+  @media screen and (max-width:680px) {
+    .header {
+      grid-template-columns: 80% 20%;
+      
+    }
+    ul.topnav li {display: none;}
+    ul.topnav li.icon {
+    position:static;
+    display: flex;
+    justify-content: flex-end;
+    }
+    ul.topnav {
+      background:#9933cc;
+      flex-direction: column;
+      display: block;
+    }
+    .header{
+      flex-direction: row;
+      width: 100%;
+    }
+    .topnav{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+    a .icon{
+      order: -1;
+    }
+    li .icon{
+      align-self: flex-start;
+    }
+  }
+
+  /*A classe responsiva é adicionada à ul superior com o JavaScript quando o usuário clica no ícone. Esta classe faz com que os itens principais do menu fiquem ok em telas menores */
+  @media screen and (max-width:680px) {
+    ul.topnav.responsive {
+      position: absolute;
+      padding: 1em;
+      right: 0;
+    }
+    ul.topnav.responsive li {
+      text-align:right; 
+      float: none;
+      padding:0;
+      display: inline;
+    
+    }
+    ul.topnav.responsive li a {
+    display: flex;
+    justify-content: end;
+    text-align: right;
+    }
+    .topnav.responsive{
+      height: 100%;
+      width: 60%;
+    }
+
+    .header.responsive {
+      height: 100%;
+      width: 60%;
+    }
+  }

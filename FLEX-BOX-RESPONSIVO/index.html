@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css"/>
+    <link rel="stylesheet" href="cores.css"/>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <h1>Logo</h1>
+      </div>
+      <nav>
+        <ul class="topnav"> <!-- Defina uma classe a Ul -->
+          <li class="icon"><!--Inclui o ícone do responsivo na lista-->
+            <a href="javascript:void(0);" onclick="myFunction()">&#9776;
+            </a><!--Chama a função javascript no evento click do icon-->
+          </li>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Contato</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-3 col-s-3 menu">
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-s-9">
+        <div class="main">
+          <h1>Titulo</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque consequatur ratione libero quis nihil, iste neque impedit? Atque, recusandae doloremque. Similique esse modi dicta molestiae cumque suscipit quaerat vel atque.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-3 col-s-12">
+        <div class="aside">
+          <h2>What?</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          <h2>Where?</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          <h2>How?</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>
+        &copy; Copyright 2023 HTML
+      </p>
+    </div>
+    <script>
+      function myFunction() {
+			document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+			document.getElementsByClassName("header")[0].classList.toggle("responsive");
+		}
+      </script>
+  </body>
+</html>
